@@ -15,7 +15,6 @@ class EmailOTP{
 
    //Assuming that GenerateOTPEmail will be called again by the user if they do not supply opt within a minute. 
     public string GenerateOTPEmail(string user_email){
-        
         int start = user_email.Length - domain.Length;
         bool validDomain = user_email.Contains(domain) && start<=user_email.Length-1 && user_email.Substring(start).Equals(domain);
         if(!validDomain) return EmailStatusMessage.GetErrorMessage(EmailStatus.STATUS_EMAIL_INVALID);
