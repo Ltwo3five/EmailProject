@@ -33,7 +33,7 @@ class EmailOTP{
         Task<string> optInput = input.readOTP();
         if(!optInput.Wait(timeout)) return OPTStatusMessage.GetErrorMessage(OPTStatus.STATUS_OTP_TIMEOUT);
         int retries = 0;
-        while(retries<=10 && timeTaken.TotalSeconds < 60){
+        while(retries<10 && timeTaken.TotalSeconds <= 60){
             if(!optInput.Result.Equals(optCode)){
                     optInput = input.readOTP();
                     if(!optInput.Wait(timeout))break;
@@ -44,7 +44,7 @@ class EmailOTP{
             }
                 
         }
-        if(timeTaken.TotalSeconds < 60) return OPTStatusMessage.GetErrorMessage(OPTStatus.STATUS_OTP_FAIL);
+        if(timeTaken.TotalSeconds <= 60) return OPTStatusMessage.GetErrorMessage(OPTStatus.STATUS_OTP_FAIL);
         timer.Stop();
         return OPTStatusMessage.GetErrorMessage(OPTStatus.STATUS_OTP_TIMEOUT);
     }
