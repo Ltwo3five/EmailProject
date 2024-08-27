@@ -3,9 +3,9 @@ using System.ComponentModel;
 enum EmailStatus {
         [Description("email containing OTP has been sent successfully.")]
         STATUS_EMAIL_OK,
-         [Description("email address does not exist or sending to the email has failed.")]
+        [Description("email address does not exist or sending to the email has failed.")]
         STATUS_EMAIL_FAIL,
-         [Description("email address is invalid.")]
+        [Description("email address is invalid.")]
         STATUS_EMAIL_INVALID
     }
 

@@ -3,9 +3,9 @@ using System.ComponentModel;
 enum OPTStatus {
         [Description("OTP is valid and checked.")]
         STATUS_OTP_OK,
-         [Description("OTP is wrong after 10 tries.")]
+        [Description("OTP is wrong after 10 tries.")]
         STATUS_OTP_FAIL,
-         [Description("timeout after 1 min.")]
+        [Description("timeout after 1 min.")]
         STATUS_OTP_TIMEOUT
     }
 

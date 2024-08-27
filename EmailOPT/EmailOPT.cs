@@ -20,7 +20,7 @@ class EmailOTP{
         if(!validDomain) return EmailStatusMessage.GetErrorMessage(EmailStatus.STATUS_EMAIL_INVALID);
         optCode = GenerateOPT();
         string email_body = string.Format("Your OTP Code is {0}. The code is valid for 1 minute",optCode);
-        bool messageSent = sendEmail(user_email,email_body) ;
+        bool messageSent = sendEmail(user_email,email_body);
         return messageSent?  EmailStatusMessage.GetErrorMessage(EmailStatus.STATUS_EMAIL_OK) : EmailStatusMessage.GetErrorMessage(EmailStatus.STATUS_EMAIL_FAIL);
     }
 
